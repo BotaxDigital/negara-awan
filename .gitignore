@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Deploy packages
+deploy-packages/
+
+# Cache
+.cache/
+*.tsbuildinfo
+
+# Video outputs
+packages/episodes/assets/video/*.mp4
+packages/episodes/assets/video/*.mov
+packages/episodes/assets/video/*.avi
+
+# Audio temp
+packages/assets/audio/temp/
+
+# GitHub Actions artifacts
+.github/workflows/*.log
+nul

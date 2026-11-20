@@ -1,0 +1,66 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 111222333,
+      "steps": 20,
+      "cfg": 3.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": ["4", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": {"title": "KSampler - UI Hologram"}
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {"title": "Load FLUX Model"}
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 576,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {"title": "Empty Latent 1024x576 (16:9)"}
+  },
+  "6": {
+    "inputs": {
+      "text": "futuristic holographic UI panel, translucent cyan blue, grid lines, data cards, constitution scroll animation, sci-fi but warm, indonesia aesthetic, 16:9, clean vector style, glowing edges, particle effects, white background",
+      "clip": ["4", 1]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {"title": "Positive Prompt - UI Hologram"}
+  },
+  "7": {
+    "inputs": {
+      "text": "photorealistic, pbr, gradient, texture, 3d, realistic lighting, shadows, noise, grain, watermark, text, logo, cold sterile, western sci-fi tropes, dark background",
+      "clip": ["4", 1]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {"title": "Negative Prompt"}
+  },
+  "8": {
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["4", 2]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {"title": "VAE Decode"}
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "nda/ui_hologram",
+      "images": ["8", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": {"title": "Save UI Hologram Image"}
+  }
+}

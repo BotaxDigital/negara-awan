@@ -1,0 +1,37 @@
+{
+  "versi": 1,
+  "namaNegara": "NEGARA DIATAS AWAN",
+  "motto": "Merdeka dari Gravitasi",
+  "ibukota": "Stratos",
+  "mataUang": "Nimbus (NMB)",
+  "bendera": {
+    "deskripsi": "Tiga lapis horizontal: biru langit (atas), putih awan (tengah), kuning matahari (bawah). Di tengah: lingkaran biru tua dengan 7 bintang putih melambangkan 7 lapis atmosfer.",
+    "artiWarna": {
+      "biruLangit": "Kebebasan tak terbatas",
+      "putihAwan": "Kemurnian niat warga",
+      "kuningMatahari": "Harapan & energi"
+    },
+    "svgUrl": "",
+    "generatedPrompt": "Flag of a fictional cloud nation, three horizontal stripes: deep sky blue, pure white, golden yellow. Center: dark blue circle with 7 white stars in a ring. Vector, flat design, 3:2 ratio --no gradient --no texture"
+  },
+  "lambang": {
+    "deskripsi": "Burung phoenix terbang naik memegang konstitusi di cakarnya, di belakangnya gunung awan berbentuk menara. Lingkaran luar: 7 bintang + motto 'MERDEKA DARI GRAVITASI'.",
+    "svgUrl": "",
+    "generatedPrompt": "Coat of arms for cloud nation: phoenix rising holding scroll, stylized cloud mountain tower behind, circular border with 7 stars and motto 'MERDEKA DARI GRAVITASI'. Vector, minimal, emblem style --no photo --no 3d"
+  },
+  "konstitusi": [
+    { "pasal": 1, "judul": "Hak Terbang", "isi": "Setiap warga NEGARA DIATAS AWAN berhak terbang — baik fisik, digital, maupun imajinasi — tanpa izin dari gravitasi bumi." },
+    { "pasal": 2, "judul": "Musyawarah Digital", "isi": "Semua keputusan negara diambil melalui musyawarah di kolom komentar. Suara terbanyak tidak selalu menang; suara paling menginspirasi yang dipilih." },
+    { "pasal": 3, "judul": "Awan Milik Angin", "isi": "Tanah, udara, dan data negara tidak dimiliki individu, korporasi, atau pemerintah. Awan milik angin — dan angin milik semua." }
+  ],
+  "sejarahSingkat": "NEGARA DIATAS AWAN didirikan pada hari kelahiran episode pertama ini, lahir dari keinginan ribuan netizen yang lelah dengan batas-batas fisik, birokrasi keras, dan negara-negara yang terlalu serius. Di sini, konstitusi ditulis dalam 280 karakter, menteri dipilih dari komentar lucu tapi berarti, dan ibukota Stratos dibangun dari voxel, harapan, dan bandwidth.",
+  "geografis": {
+    "lokasi": "Koordinat virtual: 0°0'0\"S 0°0'0\"E (server terdistribusi, tidak berkorespondensi dengan lokasi fisik)",
+    "tinggiRataRata": "12.000 kaki di atas permukaan laut (metafora: di atas kebiasaan)",
+    "iklim": "Selalu cerah dengan kemungkinan hujan ide 90%",
+    "populasi": 0,
+    "provinsi": []
+  },
+  "kabinet": [],
+  "updatedAt": "2026-11-20T00:00:00.000Z"
+}

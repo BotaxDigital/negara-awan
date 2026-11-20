@@ -1,0 +1,107 @@
+name: Render Episode Blender
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: 'Episode folder name (e.g., ep01-pendirian)'
+        required: true
+        default: 'ep01-pendirian'
+      total_frames:
+        description: 'Total frames (5400 = 3 min @ 30fps)'
+        required: true
+        default: '5400'
+      blender_version:
+        description: 'Blender version'
+        required: false
+        default: '4.0'
+
+jobs:
+  render:
+    name: Render Episode (Blender)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          
+      - name: Setup Blender
+        uses: jount/blender-action@v1
+        with:
+          version: ${{ github.event.inputs.blender_version }}
+          
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          
+      - name: Cache Blender
+        uses: actions/cache@v4
+        with:
+          path: ~/.config/blender
+          key: blender-${{ runner.os }}-${{ hashFiles('render_episode1.py') }}
+          restore-keys: |
+            blender-${{ runner.os }}-
+            
+      - name: Verify assets
+        run: |
+          ls -la packages/assets/audio/vo_s0*.wav
+          ls -la render_episode1.py
+          
+      - name: Render Episode
+        id: render
+        run: |
+          python render_episode1.py
+          
+      - name: Compress for Telegram
+        run: |
+          INPUT="packages/episodes/assets/video/ep01-pendirian.mp4"
+          OUTPUT="packages/episodes/assets/video/ep01-pendirian-tg.mp4"
+          ffmpeg -y -i "$INPUT" -vf "scale=720:1280:force_original_aspect_ratio=decrease,pad=720:1280:(ow-iw)/2:(oh-ih)/2:black" -c:v libx264 -crf 24 -preset medium -c:a aac -b:a 96k "$OUTPUT"
+          echo "Telegram version: $(ls -lh $OUTPUT)"
+          
+      - name: Upload Video Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: episode-video
+          path: |
+            packages/episodes/assets/video/ep01-pendirian.mp4
+            packages/episodes/assets/video/ep01-pendirian-tg.mp4
+          retention-days: 30
+          
+      - name: Generate Upload Info
+        run: |
+          cat > upload-info.json << EOF
+          {
+            "episode": "${{ github.event.inputs.episode }}",
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "files": {
+              "full_hd": "ep01-pendirian.mp4",
+              "telegram": "ep01-pendirian-tg.mp4"
+            },
+            "specs": {
+              "resolution": "1920x1080",
+              "fps": 30,
+              "codec": "H.264",
+              "duration_sec": ${{ github.event.inputs.total_frames }} / 30
+            }
+          }
+          EOF
+          cat upload-info.json
+          
+      - name: Upload Info
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-info
+          path: upload-info.json
+          
+      - name: Notify (Telegram)
+        if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != ''
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="✅ Render selesai: ${{ github.event.inputs.episode }}%0A📥 Download di GitHub Actions Artifacts%0A📊 Specs: 1920x1080, 30fps, ${{ github.event.inputs.total_frames }} frames" \
+            -d parse_mode="HTML"

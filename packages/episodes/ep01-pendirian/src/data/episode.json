@@ -1,0 +1,162 @@
+{
+  "nomor": 1,
+  "judul": "Pendirian NEGARA DIATAS AWAN",
+  "deskripsi": "Episode perdana: Presiden bersumpah, konstitusi dibacakan, pendaftaran kabinet pertama dibuka untuk netizen.",
+  "durasiTargetDetik": 180,
+  "script": [
+    {
+      "id": "s01_hook",
+      "speaker": "narrator",
+      "textDisplay": "Negara ini tidak punya tanah. Hanya awan, kode, dan kalian.",
+      "durationSec": 4,
+      "animationNotes": "Timelapse awan bergerak cepat → bangunan low-poly muncul dari kabut → bendera naik di menara tertinggi",
+      "cameraNotes": "Wide aerial → dolly forward ke monumen → close-up bendera",
+      "audioCue": "ambient_awans.mp3, sfx_bendera_naik.mp3, musik_tema_awal.mp3"
+    },
+    {
+      "id": "s02_lore_intro",
+      "speaker": "narrator",
+      "textDisplay": "Selamat datang di NEGARA DIATAS AWAN. Ibukota: Stratos. Moto: Merdeka dari Gravitasi. Mata uang: Nimbus. Konstitusi hanya tiga pasal: 1) Setiap warga berhak terbang. 2) Keputusan diambil musyawarah, bukan mayoritas. 3) Awan tak pernah milik siapa — awan milik angin.",
+      "durationSec": 18,
+      "animationNotes": "UI hologram muncul: nama negara, moto, konstitusi 3 pasal bergulir, bendera & lambang rotate 3D. Text overlay ketik berjalan di bawah.",
+      "cameraNotes": "Static camera pada UI, sesekali cut ke wide shot kota awan",
+      "audioCue": "ui_hologram.mp3, musik_tema_awal.mp3"
+    },
+    {
+      "id": "s03_presiden_entrance",
+      "speaker": "narrator",
+      "textDisplay": "Hari ini, Presiden pertama bersumpah di hadapan kalian — rakyat digital, warga awan, pembangun mimpi.",
+      "durationSec": 5,
+      "animationNotes": "Presiden (avatar) jalan ke podium di Monumen Awan, confetti partikel awan. Text overlay di bawah.",
+      "cameraNotes": "Low angle shot → eye level di podium",
+      "audioCue": "sfx_langkah.mp3, crowd_murmur.mp3, musik_tema_awal.mp3"
+    },
+    {
+      "id": "s04_sumpah",
+      "speaker": "presiden",
+      "textDisplay": "\"Dengan nama angin yang tak terlihat, aku bersumpah: akan menjaga kebebasan setiap awan, mendengar setiap suara dari kolom komentar, dan tak pernah membiarkan negara ini mendarat — kecuali untuk istirahat.\"",
+      "durationSec": 12,
+      "animationNotes": "Presiden angkat tangan kanan, tangan kiri pegang kitab konstitusi hologram, partikel cahaya naik. Sumpah text overlay besar di tengah layar.",
+      "cameraNotes": "Medium close-up wajah → cut ke tangan pegang kitab → wide shot seluruh lapangan",
+      "audioCue": "sfx_sumpah_glow.mp3, musik_epik_naik.mp3"
+    },
+    {
+      "id": "s05_buka_pendaftaran",
+      "speaker": "system",
+      "textDisplay": "Sistem: Pendaftaran Kabinet Pertama DIBUKA. Format: NAMA | JABATAN | ALASAN 1 KALIMAT. Contoh: Budi | Menteri Gravitasi | Supaya orang tidak jatuh ke bumi saat tidur. 50 terpilih jadi menteri, gubernur, pejabat tinggi. Batas: 7 hari.",
+      "durationSec": 15,
+      "animationNotes": "UI form terbang ketik sendiri, contoh animasi, timer 7 hari mundur, partikel komentar masuk real-time. Text overlay format komentar di bawah.",
+      "cameraNotes": "Split screen: form kiri, preview komentar masuk kanan",
+      "audioCue": "ui_typing.mp3, notif_komentar.mp3, musik_tema_awal.mp3"
+    },
+    {
+      "id": "s06_teaser_ep2",
+      "speaker": "narrator",
+      "textDisplay": "Minggu depan: 50 nama terpilih diumumkan. Kantor menteri terbentuk. Undang-undang pertama disahkan. Siapa jadi Gubernur Awan Timur?",
+      "durationSec": 10,
+      "animationNotes": "Siluet 50 orang di depan gedung parlement, gedung-gedung kantor tumbuh dari awan, tanda tanya di atas kepala Gubernur Awan Timur. Text overlay teaser.",
+      "cameraNotes": "Fast cuts: siluet → gedung → tanda tanya → logo negara",
+      "audioCue": "sfx_gedung_tumbuh.mp3, musik_teaser.mp3"
+    },
+    {
+      "id": "s07_cta",
+      "speaker": "narrator",
+      "textDisplay": "Komentar sekarang. Negara ini milik kita. NEGARA DIATAS AWAN — merdeka dari gravitasi.",
+      "durationSec": 6,
+      "animationNotes": "Logo negara zoom in, handle sosmed @negaradiatasawan (YT/IG/FB/TikTok), tombol 'Komentar' berkedip. CTA text overlay.",
+      "cameraNotes": "Centered, static, hold 3 detik lalu fade to black",
+      "audioCue": "musik_outro.mp3, sfx_logo_pop.mp3"
+    }
+  ],
+  "officialsBaru": [],
+  "loreUpdate": {
+    "versi": 1,
+    "namaNegara": "NEGARA DIATAS AWAN",
+    "motto": "Merdeka dari Gravitasi",
+    "ibukota": "Stratos",
+    "mataUang": "Nimbus (NMB)",
+    "bendera": {
+      "deskripsi": "Tiga lapis horizontal: biru langit (atas), putih awan (tengah), kuning matahari (bawah). Di tengah: lingkaran biru tua dengan 7 bintang putih melambangkan 7 lapis atmosfer.",
+      "artiWarna": {
+        "biruLangit": "Kebebasan tak terbatas",
+        "putihAwan": "Kemurnian niat warga",
+        "kuningMatahari": "Harapan & energi"
+      },
+      "generatedPrompt": "Flag of a fictional cloud nation, three horizontal stripes: deep sky blue, pure white, golden yellow. Center: dark blue circle with 7 white stars in a ring. Vector, flat design, 3:2 ratio --no gradient --no texture"
+    },
+    "lambang": {
+      "deskripsi": "Burung phoenix terbang naik memegang konstitusi di cakarnya, di belakangnya gunung awan berbentuk menara. Lingkaran luar: 7 bintang + motto 'MERDEKA DARI GRAVITASI'.",
+      "generatedPrompt": "Coat of arms for cloud nation: phoenix rising holding scroll, stylized cloud mountain tower behind, circular border with 7 stars and motto 'MERDEKA DARI GRAVITASI'. Vector, minimal, emblem style --no photo --no 3d"
+    },
+    "konstitusi": [
+      {
+        "pasal": 1,
+        "judul": "Hak Terbang",
+        "isi": "Setiap warga NEGARA DIATAS AWAN berhak terbang — baik fisik, digital, maupun imajinasi — tanpa izin dari gravitasi bumi."
+      },
+      {
+        "pasal": 2,
+        "judul": "Musyawarah Digital",
+        "isi": "Semua keputusan negara diambil melalui musyawarah di kolom komentar. Suara terbanyak tidak selalu menang; suara paling menginspirasi yang dipilih."
+      },
+      {
+        "pasal": 3,
+        "judul": "Awan Milik Angin",
+        "isi": "Tanah, udara, dan data negara tidak dimiliki individu, korporasi, atau pemerintah. Awan milik angin — dan angin milik semua."
+      }
+    ],
+    "sejarahSingkat": "NEGARA DIATAS AWAN didirikan pada hari kelahiran episode pertama ini, lahir dari keinginan ribuan netizen yang lelah dengan batas-batas fisik, birokrasi keras, dan negara-negara yang terlalu serius. Di sini, konstitusi ditulis dalam 280 karakter, menteri dipilih dari komentar lucu tapi berarti, dan ibukota Stratos dibangun dari voxel, harapan, dan bandwidth.",
+    "geografis": {
+      "lokasi": "Koordinat virtual: 0°0'0\"S 0°0'0\"E (server terdistribusi, tidak berkorespondensi dengan lokasi fisik)",
+      "tinggiRataRata": "12.000 kaki di atas permukaan laut (metafora: di atas kebiasaan)",
+      "iklim": "Selalu cerah dengan kemungkinan hujan ide 90%",
+      "populasi": 0,
+      "provinsi": []
+    },
+    "kabinet": [],
+    "updatedAt": "2026-11-20T00:00:00.000Z"
+  },
+  "assets": {
+    "models": [],
+    "textures": [],
+    "audio": [
+      "musik_tema_awal.mp3",
+      "musik_epik_naik.mp3",
+      "musik_teaser.mp3",
+      "musik_outro.mp3",
+      "ambient_awans.mp3",
+      "sfx_bendera_naik.mp3",
+      "sfx_sumpah_glow.mp3",
+      "sfx_gedung_tumbuh.mp3",
+      "sfx_logo_pop.mp3",
+      "ui_hologram.mp3",
+      "ui_typing.mp3",
+      "notif_komentar.mp3",
+      "crowd_murmur.mp3",
+      "sfx_langkah.mp3",
+      "vo_s01_hook.wav",
+      "vo_s02_lore_intro.wav",
+      "vo_s03_presiden_entrance.wav",
+      "vo_s04_sumpah.wav",
+      "vo_s05_buka_pendaftaran.wav",
+      "vo_s06_teaser_ep2.wav",
+      "vo_s07_cta.wav"
+    ]
+  },
+  "renderSettings": {
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "crf": 22
+  },
+  "uploadTargets": [
+    "youtube",
+    "instagram",
+    "facebook",
+    "tiktok"
+  ],
+  "status": "draft"
+}

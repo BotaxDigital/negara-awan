@@ -1,0 +1,15 @@
+{
+  "name": "@negara-awan/llm-scorer",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "score": "node index.js"
+  },
+  "dependencies": {
+    "googleapis": "^130.0.0",
+    "dotenv": "^16.3.0",
+    "openai": "^4.24.0"
+  }
+}

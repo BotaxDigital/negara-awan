@@ -1,0 +1,20 @@
+{
+  "name": "@negara-awan/render-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "main": "upload.js",
+  "type": "module",
+  "scripts": {
+    "render": "node render.js",
+    "compress": "node compress.js",
+    "upload": "node upload.js",
+    "full": "node render.js && node compress.js && node upload.js"
+  },
+  "dependencies": {
+    "googleapis": "^130.0.0",
+    "dotenv": "^16.3.0",
+    "form-data": "^4.0.0",
+    "axios": "^1.6.0",
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}

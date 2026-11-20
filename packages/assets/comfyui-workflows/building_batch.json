@@ -1,0 +1,66 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 123456789,
+      "steps": 20,
+      "cfg": 3.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": ["4", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": {"title": "KSampler - Building"}
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {"title": "Load FLUX Model"}
+  },
+  "5": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {"title": "Empty Latent 512x512"}
+  },
+  "6": {
+    "inputs": {
+      "text": "low poly stylized cloud city building, geometric tower, cylindrical with conical roof, glowing windows, pastel blue white yellow palette, flat shading, hard edges, vertex colors, no textures, isometric view, unity game asset style, white background",
+      "clip": ["4", 1]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {"title": "Positive Prompt - Building"}
+  },
+  "7": {
+    "inputs": {
+      "text": "photorealistic, pbr, round shapes, organic, high poly, realistic lighting, shadows, textures, gradient, smooth shading, noise, grain, watermark, text, logo",
+      "clip": ["4", 1]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {"title": "Negative Prompt"}
+  },
+  "8": {
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["4", 2]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {"title": "VAE Decode"}
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "nda/building",
+      "images": ["8", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": {"title": "Save Building Image"}
+  }
+}

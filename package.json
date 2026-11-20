@@ -1,0 +1,40 @@
+{
+  "name": "negara-awan",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "tools/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:ep1": "cd packages/episodes/ep01-pendirian && npx remotion studio",
+    "build:ep1": "cd packages/episodes/ep01-pendirian && npx remotion render src/composition.tsx NegaraDiAtasAwanEp1 out/video.mp4 --image-format=png --jpeg-quality=90",
+    "upload:all": "node packages/render-pipeline/upload.js",
+    "scrape:comments": "node tools/comment-scraper/index.js",
+    "score:comments": "node tools/llm-scorer/index.js",
+    "sync:sheet": "node tools/sheet-sync/index.js"
+  },
+  "devDependencies": {
+    "@remotion/bundler": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/player": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "@remotion/three": "^4.0.0",
+    "@types/react": "^18.2.0",
+    "@types/three": "^0.160.0",
+    "concurrently": "^8.2.2",
+    "remotion": "^4.0.0",
+    "three": "^0.160.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "form-data": "^4.0.6",
+    "glob": "^14.0.6",
+    "node-fetch": "^2.7.0",
+    "zod": "^4.6.7"
+  }
+}
